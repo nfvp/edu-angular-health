@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Telephone</th>
+            <th>Birthdate</th>
+            <th>Citizen Card</th>
+            <th>Fiscal Number</th>
+            <th>Social Security Number</th>
+            <th>Insurance Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let patient of patients">
+            <td>{{ patient.name }}</td>
+            <td>{{ patient.phoneNumber }}</td>
+            <td>{{ patient.birthdate }}</td>
+            <td>{{ patient.citizenCard }}</td>
+            <td>{{ patient.fiscalNumber }}</td>
+            <td>{{ patient.socialSecurityNumber }}</td>
+            <td>{{ patient.insuranceNumber }}</td>
+        </tr>
+    </tbody>
+</table>
