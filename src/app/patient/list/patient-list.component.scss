@@ -1,0 +1,27 @@
+table {
+  margin: auto;
+
+  td {
+    border: 5px solid lightgray;
+    padding: 1vh 0.5vw;
+    background-color: black;
+    color: white;
+
+    img {
+      cursor: pointer;
+      height: 3vh;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  th {
+    border: 5px solid lightgray;
+    background-color: gray;
+    color: white;
+    text-align: left;
+    padding: 2vh 0.5vw;
+  }
+}

@@ -5,6 +5,8 @@
             <th scope="col">Doctor</th>
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +15,8 @@
             <td>{{ appointment.doctor.name }}</td>
             <td>{{ appointment.startDate | date: 'long' }}</td>
             <td>{{ appointment.endDate | date: 'long' }}</td>
+            <td [routerLink]="['/appointments/', appointment.id]"><fa-icon [icon]="faEdit"></fa-icon></td>
+            <td (click)="deleteAppointments(appointment.id)"><fa-icon [icon]="faTrashAlt"></fa-icon></td>
         </tr>
     </tbody>
 </table>

@@ -8,6 +8,8 @@
             <th>Fiscal Number</th>
             <th>Social Security Number</th>
             <th>Insurance Number</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +21,8 @@
             <td>{{ patient.fiscalNumber }}</td>
             <td>{{ patient.socialSecurityNumber }}</td>
             <td>{{ patient.insuranceNumber }}</td>
+            <td class="center" [routerLink]="['/patients/', patient.id]"><img src="https://img.icons8.com/edit/FFFFFF"></td>
+            <td class="center" (click)="deletePatient(patient.id)"><img src="https://img.icons8.com/delete-forever--v1/FFFFFF"></td>
         </tr>
     </tbody>
 </table>

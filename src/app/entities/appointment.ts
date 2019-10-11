@@ -2,6 +2,7 @@ import { Doctor } from './doctor';
 import { Patient } from './patient';
 
 export class Appointment {
+    id: number;
     startData: Date;
     endDate: Date;
     doctor: Doctor;

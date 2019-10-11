@@ -1,0 +1,58 @@
+<form>
+    <div class="left">
+        <div class="label">
+            <label for="patientId">ID</label>
+        </div>
+        <div class="label">
+            <label for="patientName">Name</label>
+        </div>
+        <div class="label">
+            <label for="patientPhoneNumber">Telephone</label>
+        </div>
+        <div class="label">
+            <label for="patientBirthdate">Birthdate</label>
+        </div>
+        <div class="label">
+            <label for="patientCitizenCard">Citizen Card</label>
+        </div>
+        <div class="label">
+            <label for="patientFiscalNumber">Fiscal Number</label>
+        </div>
+        <div class="label">
+            <label for="patientSocialSecurityNumber">Social Security Number</label>
+        </div>
+        <div class="label">
+            <label for="patientInsuranceNumber">Insurance Number</label>
+        </div>
+    </div>
+    <div class="right">
+        <div class="input">
+            <input id="patientId" name="patientId" type="text" />
+        </div>
+        <div class="input">
+            <input id="patientName" name="patientName" type="text" />
+        </div>
+        <div class="input">
+            <input id="patientPhoneNumber" name="patientPhoneNumber" type="tel" />
+        </div>
+        <div class="input">
+            <input id="patientBirthdate" name="patientBirthdate" type="date" />
+        </div>
+        <div class="input">
+            <input id="patientCitizenCard" name="patientCitizenCard" type="number" />
+        </div>
+        <div class="input">
+            <input id="patientFiscalNumber" name="patientFiscalNumber" type="number" />
+        </div>
+        <div class="input">
+            <input id="patientSocialSecurityNumber" name="patientSocialSecurityNumber" type="text" />
+        </div>
+        <div class="input">
+            <input id="patientInsuranceNumber" name="patientInsuranceNumber" type="text" />
+        </div>
+    </div>
+    <div class="buttons">
+        <button type="submit" (click)="savePatient()">Submit</button>
+        <button type="button" routerLink="/patients">Cancel</button>
+    </div>
+</form>

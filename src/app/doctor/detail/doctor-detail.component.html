@@ -1,0 +1,45 @@
+<form>
+    <mat-grid-list cols="2" rowHeight="15vh">
+        <mat-grid-tile [colspan]="2">
+            <mat-form-field appearance="outline">
+                <mat-label>ID</mat-label>
+                <input matInput id="doctorId" name="doctorId" type="text" placeholder="ID">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput id="doctorName" name="doctorName" type="text" placeholder="Name">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Telephone</mat-label>
+                <input matInput id="doctorPhoneNumber" name="doctorPhoneNumber" type="tel" placeholder="Telephone">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Wage</mat-label>
+                <input matInput id="doctorWage" name="doctorWage" type="number" step="0.01" placeholder="Wage">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Speciality</mat-label>
+                <input matInput id="doctorSpeciality" name="doctorSpeciality" type="text" placeholder="Speciality">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" class="buttons">
+            <button mat-raised-button type="submit" (click)="saveDoctor()">Submit</button>
+            <button mat-raised-button type="button" routerLink="/doctors">Cancel</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <!--input [value]="doctor.id">
+    <input [value]="doctor.name">
+    <input [value]="doctor.phoneNumber">
+    <input [value]="doctor.wage">
+    <input [value]="doctor.speciality"-->
+
+</form>
