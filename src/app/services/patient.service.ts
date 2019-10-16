@@ -7,7 +7,7 @@ import { Patient } from '../entities/patient';
 })
 export class PatientService {
 
-  private baseUrl: string = "http://localhost:8080/patients";  
+  private baseUrl: string = "http://localhost:8080/api/patients";  
 
   constructor(private httpClient: HttpClient) { }
   
@@ -15,19 +15,19 @@ export class PatientService {
     return this.httpClient.get<Patient[]>(`${this.baseUrl}`);
   }
 
-  getPatient(id: string) {
-    return this.httpClient.get(`${this.baseUrl}/${id}`);
+  getPatient(id) {
+    return this.httpClient.get<Patient>(`${this.baseUrl}/${id}`);
   }
 
-  createPatient(patient: Patient) {
-    return this.httpClient.post(`${this.baseUrl}/patients/`, patient);
+  createPatient(patient) {
+    return this.httpClient.post(`${this.baseUrl}`, patient);
   }
 
-  updatePatient(patient: Patient) {
+  updatePatient(patient) {
     return this.httpClient.put(`${this.baseUrl}/${patient.id}`, patient);
   }
 
-  deletePatient(id: number) {
+  deletePatient(id) {
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 

@@ -7,7 +7,7 @@ import { Doctor } from '../entities/doctor';
 })
 export class DoctorService {
 
-  private baseUrl: string = "http://localhost:8080/doctors";  
+  private baseUrl: string = "http://localhost:8080/api/doctors";  
 
   constructor(private httpClient: HttpClient) { }
 
@@ -15,19 +15,19 @@ export class DoctorService {
     return this.httpClient.get<Doctor[]>(`${this.baseUrl}`);
   }
 
-  getDoctor(id: string) {
-    return this.httpClient.get(`${this.baseUrl}/${id}`);
+  getDoctor(id) {
+    return this.httpClient.get<Doctor>(`${this.baseUrl}/${id}`);
   }
 
-  createDoctor(doctor: Doctor) {
-    return this.httpClient.post(`${this.baseUrl}/doctors/`, doctor);
+  createDoctor(doctor) {
+    return this.httpClient.post(`${this.baseUrl}`, doctor);
   }
 
-  updateDoctor(doctor: Doctor) {
+  updateDoctor(doctor) {
     return this.httpClient.put(`${this.baseUrl}/${doctor.id}`, doctor);
   }
 
-  deleteDoctor(id: number) {
+  deleteDoctor(id) {
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 

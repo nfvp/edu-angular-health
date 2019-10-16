@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="patientForm" (ngSubmit)="savePatient(patientForm.value)">
     <div class="left">
         <div class="label">
             <label for="patientId">ID</label>
@@ -27,32 +27,32 @@
     </div>
     <div class="right">
         <div class="input">
-            <input id="patientId" name="patientId" type="text" />
+            <input id="patientId" name="patientId" type="text" formControlName="id"/>
         </div>
         <div class="input">
-            <input id="patientName" name="patientName" type="text" />
+            <input id="patientName" name="patientName" type="text" formControlName="name"/>
         </div>
         <div class="input">
-            <input id="patientPhoneNumber" name="patientPhoneNumber" type="tel" />
+            <input id="patientPhoneNumber" name="patientPhoneNumber" type="tel" formControlName="phoneNumber"/>
         </div>
         <div class="input">
-            <input id="patientBirthdate" name="patientBirthdate" type="date" />
+            <input id="patientBirthdate" name="patientBirthdate" type="date" formControlName="birthdate"/>
         </div>
         <div class="input">
-            <input id="patientCitizenCard" name="patientCitizenCard" type="number" />
+            <input id="patientCitizenCard" name="patientCitizenCard" type="number" formControlName="citizenCard"/>
         </div>
         <div class="input">
-            <input id="patientFiscalNumber" name="patientFiscalNumber" type="number" />
+            <input id="patientFiscalNumber" name="patientFiscalNumber" type="number" formControlName="fiscalNumber"/>
         </div>
         <div class="input">
-            <input id="patientSocialSecurityNumber" name="patientSocialSecurityNumber" type="text" />
+            <input id="patientSocialSecurityNumber" name="patientSocialSecurityNumber" type="text" formControlName="socialSecurityNumber"/>
         </div>
         <div class="input">
-            <input id="patientInsuranceNumber" name="patientInsuranceNumber" type="text" />
+            <input id="patientInsuranceNumber" name="patientInsuranceNumber" type="text" formControlName="insuranceNumber"/>
         </div>
     </div>
     <div class="buttons">
-        <button type="submit" (click)="savePatient()">Submit</button>
+        <button type="submit">Submit</button>
         <button type="button" routerLink="/patients">Cancel</button>
     </div>
 </form>

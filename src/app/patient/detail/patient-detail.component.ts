@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { Patient } from '../../entities/patient';
 import { PatientService } from '../../services/patient.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-patient-detail',
@@ -10,20 +11,32 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PatientDetailComponent {
 
-  id: string;
-  patient: Patient;
+  patientForm;
 
-  constructor(patientService: PatientService, private route: ActivatedRoute) {
-    this.id = this.route.snapshot.paramMap.get("id");
 
-    patientService.getPatient(this.id).subscribe(
+  constructor(private patientService: PatientService, private route: ActivatedRoute, private formBuilder: FormBuilder, private router: Router) {
+    let patientId = route.snapshot.paramMap.get("id");
+
+    patientService.getPatient(patientId).subscribe(
       (res: Patient) => {
-        this.patient = res;
+        this.patientForm = this.formBuilder.group({
+          id: [{ value: res.id, disabled: true }],
+          name: res.name,
+          gender: res.gender,
+          birthdate: res.birthdate,
+          citizenCard: res.citizenCard,
+          fiscalNumber: res.fiscalNumber,
+          phoneNumber: res.phoneNumber,
+          address: res.address,
+          socialSecurityNumber: res.socialSecurityNumber,
+          insuranceNumber: res.insuranceNumber
+        });
       });
   }
 
-  savePatient() {
-
+  savePatient(patient) {
+    this.patientService.updatePatient(patient);
+    this.router.navigateByUrl('/login');
   }
 
 }
