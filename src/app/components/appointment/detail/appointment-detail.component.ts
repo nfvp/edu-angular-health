@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { Appointment } from '../../entities/appointment';
-import { Patient } from '../../entities/patient';
-import { Doctor } from '../../entities/doctor';
-import { AppointmentService } from '../../services/appointment.service';
-import { DoctorService } from '../../services/doctor.service';
-import { PatientService } from '../../services/patient.service';
+import { Appointment } from '../../../entities/appointment';
+import { Patient } from '../../../entities/patient';
+import { Doctor } from '../../../entities/doctor';
+import { AppointmentService } from '../../../services/appointment.service';
+import { DoctorService } from '../../../services/doctor.service';
+import { PatientService } from '../../../services/patient.service';
 
 @Component({
   selector: 'app-appointment-detail',

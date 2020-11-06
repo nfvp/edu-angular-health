@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { Patient } from '../../entities/patient';
-import { PatientService } from '../../services/patient.service';
+import { Patient } from '../../../entities/patient';
+import { PatientService } from '../../../services/patient.service';
 
 @Component({
   selector: 'app-patient-detail',

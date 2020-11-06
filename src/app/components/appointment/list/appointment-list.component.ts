@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppointmentService } from '../../services/appointment.service';
-import { Appointment } from '../../entities/appointment';
+import { AppointmentService } from '../../../services/appointment.service';
+import { Appointment } from '../../../entities/appointment';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
