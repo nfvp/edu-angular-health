@@ -7,27 +7,27 @@ import { Patient } from '../entities/patient';
 })
 export class PatientService {
 
-  private baseUrl: string = "http://localhost:8080/api/patients";  
+  private baseUrl: string = "http://localhost:8888/api/patients";
 
-  constructor(private httpClient: HttpClient) { }
-  
+  constructor(private httpClient: HttpClient) { }
+
   getPatientList() {
     return this.httpClient.get<Patient[]>(`${this.baseUrl}`);
   }
 
-  getPatient(id) {
+  getPatient(id: string) {
     return this.httpClient.get<Patient>(`${this.baseUrl}/${id}`);
   }
 
-  createPatient(patient) {
+  createPatient(patient: Patient) {
     return this.httpClient.post(`${this.baseUrl}`, patient);
   }
 
-  updatePatient(patient) {
+  updatePatient(patient: Patient) {
     return this.httpClient.put(`${this.baseUrl}/${patient.id}`, patient);
   }
 
-  deletePatient(id) {
+  deletePatient(id: string) {
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 

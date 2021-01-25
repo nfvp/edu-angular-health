@@ -7,27 +7,27 @@ import { Doctor } from '../entities/doctor';
 })
 export class DoctorService {
 
-  private baseUrl: string = "http://localhost:8080/api/doctors";  
+  private baseUrl: string = "http://localhost:8888/api/doctors";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   getDoctorList() {
     return this.httpClient.get<Doctor[]>(`${this.baseUrl}`);
   }
 
-  getDoctor(id) {
+  getDoctor(id: string) {
     return this.httpClient.get<Doctor>(`${this.baseUrl}/${id}`);
   }
 
-  createDoctor(doctor) {
+  createDoctor(doctor: Doctor) {
     return this.httpClient.post(`${this.baseUrl}`, doctor);
   }
 
-  updateDoctor(doctor) {
+  updateDoctor(doctor: Doctor) {
     return this.httpClient.put(`${this.baseUrl}/${doctor.id}`, doctor);
   }
 
-  deleteDoctor(id) {
+  deleteDoctor(id: string) {
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 

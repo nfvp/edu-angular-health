@@ -1,28 +1,29 @@
 <table>
+    <caption>List of patients</caption>
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Telephone</th>
-            <th>Birthdate</th>
-            <th>Citizen Card</th>
-            <th>Fiscal Number</th>
-            <th>Social Security Number</th>
-            <th>Insurance Number</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th scope="col">Name</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Birthdate</th>
+            <th scope="col">Citizen Card</th>
+            <th scope="col">Fiscal Number</th>
+            <th scope="col">Social Security Number</th>
+            <th scope="col">Insurance Number</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let patient of patients">
             <td>{{ patient.name }}</td>
             <td>{{ patient.phoneNumber }}</td>
-            <td>{{ patient.birthdate }}</td>
+            <td>{{ patient.birthdate | date:'longDate' }}</td>
             <td>{{ patient.citizenCard }}</td>
             <td>{{ patient.fiscalNumber }}</td>
             <td>{{ patient.socialSecurityNumber }}</td>
             <td>{{ patient.insuranceNumber }}</td>
-            <td class="center" [routerLink]="['/patients/', patient.id]"><img src="https://img.icons8.com/edit/FFFFFF"></td>
-            <td class="center" (click)="deletePatient(patient.id)"><img src="https://img.icons8.com/delete-forever--v1/FFFFFF"></td>
+            <td class="center" [routerLink]="['/patients/', patient.id]"><img alt="edit" src="https://img.icons8.com/android/24/ffffff/edit.png"></td>
+            <td class="center" (click)="deletePatient(patient.id)"><img alt="delete" src="https://img.icons8.com/android/24/ffffff/trash.png"></td>
         </tr>
     </tbody>
 </table>

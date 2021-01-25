@@ -1,0 +1,13 @@
+.card-deck {
+	margin: 30vh 10vw;
+
+	.card {
+		padding: 3vh 1vw;
+		text-align: center;
+		cursor: pointer;
+
+		.card-title {
+			padding-bottom: 3vh;
+		}
+	}
+}

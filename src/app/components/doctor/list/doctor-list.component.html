@@ -1,30 +1,31 @@
 <table mat-table [dataSource]="doctors" class="mat-elevation-z8">
+    <caption>List of doctors</caption>
     <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <th scope="col" mat-header-cell *matHeaderCellDef>Name</th>
         <td mat-cell *matCellDef="let doctor">{{ doctor.name }}</td>
     </ng-container>
     <ng-container matColumnDef="phoneNumber">
-        <th mat-header-cell *matHeaderCellDef>Telephone</th>
+        <th scope="col" mat-header-cell *matHeaderCellDef>Telephone</th>
         <td mat-cell *matCellDef="let doctor">{{ doctor.phoneNumber }}</td>
     </ng-container>
     <ng-container matColumnDef="wage">
-        <th mat-header-cell *matHeaderCellDef>Wage</th>
+        <th scope="col" mat-header-cell *matHeaderCellDef>Wage</th>
         <td mat-cell *matCellDef="let doctor">{{ doctor.wage | currency:'EUR' }}</td>
     </ng-container>
     <ng-container matColumnDef="speciality">
-        <th mat-header-cell *matHeaderCellDef>Speciality</th>
+        <th scope="col" mat-header-cell *matHeaderCellDef>Speciality</th>
         <td mat-cell *matCellDef="let doctor">{{ doctor.speciality }}</td>
     </ng-container>
     <ng-container matColumnDef="edit">
-        <th mat-header-cell *matHeaderCellDef>Edit</th>
+        <th scope="col" mat-header-cell *matHeaderCellDef>Edit</th>
         <td mat-cell *matCellDef="let doctor">
-            <i class="material-icons md-light" [routerLink]="['/doctors/', doctor.id]">edit</i>
+            <em class="material-icons md-light" [routerLink]="['/doctors/', doctor.id]">edit</em>
         </td>
     </ng-container>
     <ng-container matColumnDef="delete">
-        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <th scope="col" mat-header-cell *matHeaderCellDef>Delete</th>
         <td mat-cell *matCellDef="let doctor">
-            <i class="material-icons md-light" (click)="deleteDoctor(doctor.id)">delete_outline</i>
+            <em class="material-icons md-light" (click)="deleteDoctor(doctor.id)">delete_outline</em>
         </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
