@@ -11,15 +11,15 @@ export class HomeComponent {
     constructor(private route: Router) { }
 
     goToPatients() {
-        this.route.navigate(['/patients'])
+        this.route.navigate(['patients'])
     }
 
     goToDoctors() {
-        this.route.navigate(['/doctors'])
+        this.route.navigate(['doctors'])
     }
     
     goToAppointments() {
-        this.route.navigate(['/appointments'])
+        this.route.navigate(['appointments'])
     }
 
 }

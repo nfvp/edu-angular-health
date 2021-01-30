@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Appointment } from '../entities/appointment';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AppointmentService {
 
     private baseUrl: string = "http://localhost:8888/api/appointments";
