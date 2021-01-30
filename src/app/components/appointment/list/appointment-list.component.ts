@@ -4,22 +4,22 @@ import { Appointment } from '../../../entities/appointment';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-appointment-list',
-  templateUrl: './appointment-list.component.html',
-  styleUrls: ['./appointment-list.component.scss']
+    selector: 'app-appointment-list',
+    templateUrl: './appointment-list.component.html',
+    styleUrls: ['./appointment-list.component.scss']
 })
 export class AppointmentListComponent {
 
-  faEdit = faEdit;
-  faTrashAlt = faTrashAlt;
+    faEdit = faEdit;
+    faTrashAlt = faTrashAlt;
 
-  appointments: Appointment[] = [];
+    appointments: Appointment[] = [];
 
-  constructor(service: AppointmentService) {
-    service.getAppointmentList().subscribe(
-      (res: Appointment[]) => {
-        this.appointments = res;
-      });
-  }
+    constructor(service: AppointmentService) {
+        service.getAppointmentList().subscribe(
+            (res: Appointment[]) => {
+                this.appointments = res;
+            });
+    }
 
 }

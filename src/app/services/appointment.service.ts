@@ -2,33 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Appointment } from '../entities/appointment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AppointmentService {
 
-  private baseUrl: string = "http://localhost:8888/api/appointments";
+    private baseUrl: string = "http://localhost:8888/api/appointments";
 
-  constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 
-  getAppointmentList() {
-    return this.httpClient.get<Appointment[]>(`${this.baseUrl}`);
-  }
+    getAppointmentList() {
+        return this.httpClient.get<Appointment[]>(`${this.baseUrl}`);
+    }
 
-  getAppointment(id: string) {
-    return this.httpClient.get(`${this.baseUrl}/${id}`);
-  }
+    getAppointment(id: string) {
+        return this.httpClient.get(`${this.baseUrl}/${id}`);
+    }
 
-  createAppointment(appointment: Appointment) {
-    return this.httpClient.post(`${this.baseUrl}`, appointment);
-  }
+    createAppointment(appointment: Appointment) {
+        return this.httpClient.post(`${this.baseUrl}`, appointment);
+    }
 
-  updateAppointment(appointment: Appointment) {
-    return this.httpClient.put(`${this.baseUrl}/${appointment.id}`, appointment);
-  }
+    updateAppointment(appointment: Appointment) {
+        return this.httpClient.put(`${this.baseUrl}/${appointment.id}`, appointment);
+    }
 
-  deleteAppointment(id: string) {
-    return this.httpClient.delete(`${this.baseUrl}/${id}`);
-  }
+    deleteAppointment(id: string) {
+        return this.httpClient.delete(`${this.baseUrl}/${id}`);
+    }
 
 }
